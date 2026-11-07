@@ -1,6 +1,7 @@
 ---
 title: "DRI와 HBI, 무엇이 다를까"
 description: "직접환원철과 열간성형철의 차이, 물류와 품질 관점에서 비교합니다."
+coverImage: "/images/posts/dri-hbi.svg"
 date: "2026-11-04"
 author: "nexsteel 편집부"
 category: "Raw Materials"

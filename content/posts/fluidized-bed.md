@@ -1,6 +1,7 @@
 ---
 title: "유동층 환원반응기의 특징"
 description: "미세 철광석을 효율적으로 환원하는 유동층 기술의 구조와 장점을 정리합니다."
+coverImage: "/images/posts/fluidized-bed.svg"
 date: "2026-11-05"
 author: "nexsteel 편집부"
 category: "Process Technology"

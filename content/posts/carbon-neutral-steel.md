@@ -1,6 +1,7 @@
 ---
 title: "철강산업의 탄소중립 로드맵"
 description: "철강 생산의 배출 구조를 이해하고 단계적인 감축 전략을 살펴봅니다."
+coverImage: "/images/posts/carbon-neutral-steel.svg"
 date: "2026-11-02"
 author: "nexsteel 편집부"
 category: "Decarbonization"

@@ -1,6 +1,7 @@
 ---
 title: "Electric Smelting Furnace 기술의 이해"
 description: "전기로와 다른 방식으로 저품위 원료를 처리하는 ESF의 가능성을 살펴봅니다."
+coverImage: "/images/posts/esf-technology.svg"
 date: "2026-11-03"
 author: "nexsteel 편집부"
 category: "Process Technology"

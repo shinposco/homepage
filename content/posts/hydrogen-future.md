@@ -1,6 +1,7 @@
 ---
 title: "수소 기반 제철공정의 미래"
 description: "수소 공급망, 전력 인프라, 소재 기술이 함께 만드는 차세대 제철의 모습입니다."
+coverImage: "/images/posts/hydrogen-future.svg"
 date: "2026-11-01"
 author: "nexsteel 편집부"
 category: "Future of Steel"

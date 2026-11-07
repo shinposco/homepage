@@ -1,6 +1,7 @@
 ---
 title: "수소환원제철의 기본 원리"
 description: "탄소 대신 수소로 산화철을 환원하는 공정의 원리와 가능성을 살펴봅니다."
+coverImage: "/images/posts/hydrogen-ironmaking.svg"
 date: "2026-11-06"
 author: "nexsteel 편집부"
 category: "Hydrogen Ironmaking"
