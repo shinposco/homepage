@@ -1,0 +1,2 @@
+import { getAllPosts } from '@/lib/posts'
+export async function GET(){const base='https://nexsteel.vercel.app'; const urls=getAllPosts().map(p=>`<url><loc>${base}/posts/${p.slug}</loc><lastmod>${p.updated||p.date}</lastmod></url>`).join(''); return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${base}</loc></url><url><loc>${base}/posts</loc></url>${urls}</urlset>`,{headers:{'Content-Type':'application/xml'}})}

@@ -1,0 +1,2 @@
+import { getAllPosts } from '@/lib/posts'
+export async function GET(){const base='https://nexsteel.vercel.app'; const items=getAllPosts().map(p=>`<item><title><![CDATA[${p.title}]]></title><link>${base}/posts/${p.slug}</link><description><![CDATA[${p.description}]]></description><pubDate>${new Date(p.date).toUTCString()}</pubDate></item>`).join(''); return new Response(`<?xml version="1.0"?><rss version="2.0"><channel><title>nexsteel</title><link>${base}</link><description>철강 기술의 오늘과 내일</description>${items}</channel></rss>`,{headers:{'Content-Type':'application/rss+xml'}})}
