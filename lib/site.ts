@@ -1,6 +1,8 @@
 const origin = process.env.NEXT_PUBLIC_SITE_URL || 'https://nexsteel.vercel.app'
 
-export const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+export const basePath = process.env.GITHUB_ACTIONS === 'true'
+  ? process.env.NEXT_PUBLIC_BASE_PATH || '/homepage'
+  : ''
 export const siteBaseUrl = `${origin.replace(/\/$/, '')}${basePath}`
 
 export function withBasePath(path: string, addTrailingSlash = false) {

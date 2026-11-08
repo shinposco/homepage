@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
+const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === 'true'
+
 const nextConfig = {
-  output: 'export',
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  ...(isGitHubPagesBuild ? { output: 'export' } : {}),
+  basePath: isGitHubPagesBuild ? process.env.NEXT_PUBLIC_BASE_PATH || '/homepage' : '',
   trailingSlash: true,
   typescript: {
     ignoreBuildErrors: true,
