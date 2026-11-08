@@ -31,4 +31,12 @@ pnpm install
 pnpm dev
 ```
 
-Vercel 프로젝트에 연결한 뒤 배포하면 새 Markdown 파일이 다음 빌드에서 자동 반영됩니다. 타입 검사와 정적 생성을 확인하려면 `pnpm build`를 실행하세요.
+### GitHub Pages 배포
+
+저장소의 `deploy` 브랜치에 푸시하면 GitHub Actions가 정적 사이트를 빌드해 Pages에 배포합니다. 글은 `content/posts`의 Markdown 파일로 관리하며, 새 글을 푸시할 때마다 다시 생성됩니다.
+
+최초 한 번 저장소의 **Settings → Pages → Build and deployment → Source**에서 **GitHub Actions**를 선택하세요. 현재 저장소 이름 기준 주소는 `https://shinposco.github.io/homepage/`입니다. 이 주소를 바꾸거나 사용자 지정 도메인을 연결하면 `.github/workflows/deploy-pages.yml`의 `NEXT_PUBLIC_BASE_PATH`와 `NEXT_PUBLIC_SITE_URL`도 함께 수정하세요.
+
+로컬에서 정적 빌드 결과를 확인하려면 `pnpm build`를 실행하세요. 결과물은 `out/`에 생성됩니다.
+
+Vercel 배포도 계속 사용할 수 있습니다. 로컬 및 Vercel 빌드에서는 GitHub Pages용 경로 접두사가 적용되지 않습니다.

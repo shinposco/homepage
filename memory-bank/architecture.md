@@ -62,6 +62,7 @@ public/                    정적 이미지와 아이콘
 ## 유지보수 시 확인할 점
 
 - 게시물 데이터의 필드나 정렬·초안 규칙을 바꾸면 홈, 카드, 상세 페이지, 카테고리, RSS, sitemap의 소비처를 함께 확인합니다.
-- canonical 도메인 `https://nexsteel.vercel.app`은 현재 metadata, RSS, sitemap, robots 응답에 직접 지정되어 있습니다.
+- `lib/site.ts`가 사이트 origin과 base path를 관리합니다. GitHub Actions에서는 GitHub Pages용 origin 및 `/homepage` base path를 주입하고, 로컬/Vercel에서는 기본 Vercel origin과 빈 base path를 사용합니다.
+- GitHub Pages 배포는 `.github/workflows/deploy-pages.yml`이 `deploy` 브랜치 푸시 시 `next build`의 `out/` 정적 산출물을 게시합니다. 동적 게시물·카테고리 라우트는 `generateStaticParams`로 빌드 시 전부 생성합니다.
 - `next.config.mjs`의 `typescript.ignoreBuildErrors: true` 때문에 빌드 성공만으로 타입 오류가 없다고 판단하지 않습니다.
 - 이 문서는 현재 파일 구조를 기준으로 작성되었습니다. 라우트, 데이터 계층, 콘텐츠 형식이 변경되면 함께 갱신합니다.
