@@ -63,6 +63,6 @@ public/                    정적 이미지와 아이콘
 
 - 게시물 데이터의 필드나 정렬·초안 규칙을 바꾸면 홈, 카드, 상세 페이지, 카테고리, RSS, sitemap의 소비처를 함께 확인합니다.
 - `lib/site.ts`가 사이트 origin과 base path를 관리합니다. GitHub Actions에서는 GitHub Pages용 origin 및 `/homepage` base path를 주입하고, 로컬/Vercel에서는 기본 Vercel origin과 빈 base path를 사용합니다.
-- GitHub Pages 배포는 `.github/workflows/deploy-pages.yml`이 `deploy` 브랜치 푸시 시 `next build`의 `out/` 정적 산출물을 게시합니다. 동적 게시물·카테고리 라우트는 `generateStaticParams`로 빌드 시 전부 생성합니다. 카테고리 경로는 `lib/category-slug.ts`에서 영문 kebab-case slug로 변환해 공백·특수문자 인코딩 문제를 피합니다.
+- GitHub Pages 배포는 `.github/workflows/deploy-pages.yml`이 `deploy` 브랜치 푸시 시 `next build`의 `out/` 정적 산출물을 게시합니다. 동적 게시물·카테고리 라우트는 `generateStaticParams`로 빌드 시 전부 생성합니다. 카테고리 경로는 `lib/category-slug.ts`에서 영문 kebab-case slug로 변환해 공백·특수문자 인코딩 문제를 피하고, Markdown 본문의 내부 링크와 이미지에는 `lib/site.ts`의 base path를 붙입니다.
 - `next.config.mjs`의 `typescript.ignoreBuildErrors: true` 때문에 빌드 성공만으로 타입 오류가 없다고 판단하지 않습니다.
 - 이 문서는 현재 파일 구조를 기준으로 작성되었습니다. 라우트, 데이터 계층, 콘텐츠 형식이 변경되면 함께 갱신합니다.
