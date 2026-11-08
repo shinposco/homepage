@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight } from 'lucide-react'
 import { Footer, Header } from '@/components/blog'
 import { PostCard } from '@/components/blog/post-card'
 import { getAllCategories, getAllPosts, getFeaturedPosts } from '@/lib/posts'
+import { categorySlug } from '@/lib/category-slug'
 import hyrexImage from '@/HyREX.png'
 
 export default function Home(){
@@ -35,7 +36,7 @@ export default function Home(){
         <div className="section-heading"><div><p className="eyebrow accent">THE ARCHIVE</p><h2>새로운 관점</h2></div><Link className="text-link" href="/posts">모든 글 보기 <ArrowRight size={16}/></Link></div>
         <div className="post-grid">{posts.slice(1,4).map(p=><PostCard key={p.slug} post={p}/>)}</div>
       </section>
-      <section className="category-strip"><div className="wrap"><p className="eyebrow accent">EXPLORE BY TOPIC</p><h2>관심 있는 주제에서<br/>이야기를 시작하세요.</h2><div className="category-list">{getAllCategories().map((c,i)=><Link key={c} href={`/categories/${encodeURIComponent(c)}`}><span>0{i+1}</span>{c}<ChevronRight size={18}/></Link>)}</div></div></section>
+      <section className="category-strip"><div className="wrap"><p className="eyebrow accent">EXPLORE BY TOPIC</p><h2>관심 있는 주제에서<br/>이야기를 시작하세요.</h2><div className="category-list">{getAllCategories().map((c,i)=><Link key={c} href={`/categories/${categorySlug(c)}`}><span>0{i+1}</span>{c}<ChevronRight size={18}/></Link>)}</div></div></section>
     </main>
     <Footer/>
   </>
